@@ -32,3 +32,17 @@ Route::get('/usuarios/nuevo', function () {
 Route::get('/usuarios/{id}', function ($id) {
     return "mostrando detalle del usuario: {$id}";
 });
+/*
+ * esto es si el usuario quiere un apodo
+Route::get('/saludo/{name}/{nickname}', function ($name, $nickname) {
+    return "Bienvenido {$name}, tu apodo es {$nickname}";
+});
+*/
+
+Route::get('/saludo/{name}/{nickname?}', function ($name, $nickname = null) {
+    if ($nickname) {
+        return "Bienvenido {$name}, tu apodo es {$nickname}";
+    } else {
+        return "Bienvenido {$name}, no tienes apodo";
+    }
+});
