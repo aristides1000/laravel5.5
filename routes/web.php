@@ -25,12 +25,13 @@ Route::get('/usuarios/nuevo', function () {
  */
 
 //aquí hicimos el cambio del órden de las rutas
+//Las volvimos a cambiar
+Route::get('/usuarios/{id}', function ($id) {
+    return "Mostrando detalle del usuario: {$id}";
+})->where('id', '[0-9]+');
+
 Route::get('/usuarios/nuevo', function () {
     return 'Crear nuevo usuario';
-});
-
-Route::get('/usuarios/{id}', function ($id) {
-    return "mostrando detalle del usuario: {$id}";
 });
 /*
  * esto es si el usuario quiere un apodo
